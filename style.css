@@ -1,24 +1,50 @@
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", Helvetica, Arial, sans-serif;
     margin: 0;
-    background: #ffffff;
+    background: #F3F6FB;
     color: #0A233F;
+}
+
+/* 공통 레이아웃 */
+.section,
+.hero {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 h1, h2, h3 {
     color: #1D6CF2;
+    margin-top: 0;
 }
 
+p {
+    line-height: 1.6;
+}
+
+/* 구분선 */
 hr {
     border: none;
-    border-top: 1px solid #E5E5E5;
-    margin: 50px 0;
+    border-top: 1px solid #E0E4F0;
+    margin: 0;
 }
 
+/* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
-    background: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background: linear-gradient(145deg, #ffffff 0%, #F3F8FF 60%, #E5F0FF 100%);
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 .subtitle {
@@ -27,67 +53,175 @@ hr {
     color: #4A4A4A;
 }
 
+/* KPI 카드 */
 .kpi-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .kpi {
-    background: #F4F8FF;
-    padding: 20px 25px;
-    width: 150px;
-    border-radius: 12px;
+    background: #FFFFFF;
+    padding: 18px 22px;
+    width: 160px;
+    border-radius: 14px;
     text-align: center;
+    box-shadow: 0 8px 18px rgba(13, 51, 122, 0.08);
 }
 
 .kpi h3 {
     margin: 0;
-    font-size: 28px;
+    font-size: 26px;
+    color: #0A233F;
 }
 
+.kpi p {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #6A7283;
+}
+
+/* CTA 버튼 */
 .cta-buttons {
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+.cta-primary,
+.cta-secondary {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .cta-primary {
     background: #1D6CF2;
-    color: white;
-    padding: 12px 26px;
-    border-radius: 10px;
-    text-decoration: none;
-    margin-right: 10px;
+    color: #ffffff;
+    margin-right: 8px;
+    box-shadow: 0 8px 18px rgba(0, 92, 255, 0.35);
+}
+
+.cta-primary:hover {
+    background: #1450B5;
 }
 
 .cta-secondary {
-    background: #E9EFFC;
+    background: #E4EDFF;
     color: #1D6CF2;
-    padding: 12px 26px;
-    border-radius: 10px;
-    text-decoration: none;
 }
 
+.cta-secondary:hover {
+    background: #D6E3FF;
+}
+
+/* 섹션 카드 스타일 */
 .section {
-    padding: 20px 40px;
-    max-width: 900px;
-    margin: auto;
+    background: #FFFFFF;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 18px;
+    box-shadow: 0 10px 22px rgba(15, 41, 82, 0.06);
 }
 
+.section h2 {
+    margin-bottom: 10px;
+}
+
+.section p {
+    margin-top: 0;
+}
+
+/* 3열 레이아웃 (Why ETH) */
 .three-col {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .col {
-    width: 30%;
+    flex: 1;
+    min-width: 200px;
     background: #F8FAFF;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 18px 18px 20px 18px;
+    border-radius: 12px;
 }
 
+.col h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+/* 리스트 */
+.section ul, .section ol {
+    padding-left: 20px;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.section li {
+    margin-bottom: 6px;
+}
+
+/* 차트 이미지 */
 .chart {
-    width: 80%;
+    width: 100%;
+    max-width: 780px;
     margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(15, 41, 82, 0.12);
+}
+
+/* 반응형 - 태블릿/모바일 */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .kpi-container {
+        gap: 12px;
+    }
+
+    .kpi {
+        width: 45%;
+        padding: 14px 10px;
+    }
+
+    .section,
+    .hero {
+        padding: 28px 16px;
+    }
+}
+
+/* 더 작은 모바일 */
+@media (max-width: 480px) {
+
+    .kpi {
+        width: 100%;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .three-col {
+        flex-direction: column;
+    }
 }
