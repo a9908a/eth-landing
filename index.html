@@ -1,137 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ETH Aggressive v1 — Official Strategy</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>ETH Aggressive v1 — Automated ETH Trading Model</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- 아이콘 (선택) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1>ETH Aggressive v1</h1>
-        <p class="subtitle">
-            Institution-grade automated ETH trading model engineered for consistent performance.
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="nav-logo-mark">A</span>
+        <span class="nav-logo-text">A-Model</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#why-eth">Why ETH</a>
+        <a href="#strategy">Strategy</a>
+        <a href="#performance">Performance</a>
+        <a href="#risk">Risk</a>
+        <a href="#faq">FAQ</a>
+        <a href="#start" class="nav-cta">Start</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="hero-label">ETH Aggressive v1</p>
+        <h1>Institution-grade automated<br />ETH trading model.</h1>
+        <p class="hero-sub">
+          Volatility breakout strategy built for ETH perpetuals with controlled drawdown,
+          funding-aware filters, and systematic risk management.
         </p>
 
-        <div class="kpi-container">
-            <div class="kpi">
-                <h3>45.76%</h3>
-                <p>CAGR</p>
-            </div>
-            <div class="kpi">
-                <h3>8.65%</h3>
-                <p>Max Drawdown</p>
-            </div>
-            <div class="kpi">
-                <h3>2.03</h3>
-                <p>Sharpe Ratio</p>
-            </div>
-            <div class="kpi">
-                <h3>1.28</h3>
-                <p>Profit Factor</p>
-            </div>
+        <div class="hero-kpis">
+          <div class="hero-kpi-card">
+            <p class="kpi-label">CAGR</p>
+            <p class="kpi-value">45.76%</p>
+          </div>
+          <div class="hero-kpi-card">
+            <p class="kpi-label">Max&nbsp;Drawdown</p>
+            <p class="kpi-value">8.65%</p>
+          </div>
+          <div class="hero-kpi-card">
+            <p class="kpi-label">Sharpe</p>
+            <p class="kpi-value">2.03</p>
+          </div>
+          <div class="hero-kpi-card">
+            <p class="kpi-label">Profit&nbsp;Factor</p>
+            <p class="kpi-value">1.28</p>
+          </div>
         </div>
 
-        <div class="cta-buttons">
-            <a href="#" class="cta-primary">Start Now</a>
-            <a href="ETH_Aggressive_v1_Official_Report_v3_Final.pdf" class="cta-secondary">View PDF Report</a>
+        <div class="hero-ctas">
+          <a href="#start" class="btn btn-primary">Start Now</a>
+          <a href="ETH_Aggressive_v1_Official_Report_v3_Final.pdf" class="btn btn-ghost">
+            <i class="fa-regular fa-file-pdf"></i> View PDF Report
+          </a>
         </div>
-    </section>
+      </div>
 
-    <hr>
-
-    <!-- WHY ETH -->
-    <section class="section">
-        <h2>Why ETH Only?</h2>
-        <p>ETH has the optimal balance of volatility, liquidity, and directional momentum.</p>
-
-        <div class="three-col">
-            <div class="col">
-                <h3>BTC</h3>
-                <p>Slow and mean-reverting. Weak breakout behavior.</p>
+      <div class="hero-right">
+        <div class="hero-card">
+          <p class="hero-card-title">Live-style Backtest Snapshot</p>
+          <img src="eth_equity_curve_v3_final.png" alt="ETH Aggressive v1 Equity Curve" />
+          <div class="hero-card-footer">
+            <div>
+              <span class="metric-label">Trades</span>
+              <span class="metric-value">136</span>
             </div>
-            <div class="col">
-                <h3>SOL</h3>
-                <p>High noise. Poor trend persistence.</p>
+            <div>
+              <span class="metric-label">Win Rate</span>
+              <span class="metric-value">26.47%</span>
             </div>
-            <div class="col">
-                <h3>ETH</h3>
-                <p>Strong trends + stable volatility. Best model fit.</p>
+            <div>
+              <span class="metric-label">Expectancy</span>
+              <span class="metric-value">0.59 USDT</span>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <hr>
+  <!-- WHY ETH -->
+  <section class="section" id="why-eth">
+    <div class="section-header">
+      <p class="section-tag">Asset Selection</p>
+      <h2>Why we focus exclusively on ETH.</h2>
+      <p class="section-sub">
+        Among BTC, ETH and SOL, ETH shows the best balance between volatility, trend persistence
+        and market depth — ideal conditions for our breakout logic.
+      </p>
+    </div>
 
-    <!-- STRATEGY -->
-    <section class="section">
-        <h2>Strategy Overview</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>BTC</h3>
+        <p>Slow and mean-reverting. Breakouts often fade quickly, limiting edge for aggressive trend systems.</p>
+      </div>
+      <div class="card">
+        <h3>SOL</h3>
+        <p>High noise and unstable regimes. Overshoots, gaps and structural changes reduce robustness.</p>
+      </div>
+      <div class="card card-highlight">
+        <h3>ETH</h3>
+        <p>Consistent volatility with strong directional moves and deep liquidity. Backtests show the
+           strongest model fit and most stable performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section class="section" id="strategy">
+    <div class="section-header">
+      <p class="section-tag">Model Design</p>
+      <h2>How the ETH Aggressive v1 model trades.</h2>
+      <p class="section-sub">
+        A fully systematic volatility breakout model with funding-aware filters and position-sizing rules.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3><i class="fa-solid fa-wave-square"></i> Volatility Breakout</h3>
         <ul>
-            <li><b>ATR Breakout:</b> Enters only on confirmed volatility expansion.</li>
-            <li><b>Funding Filter:</b> Avoids trades during extreme funding conditions.</li>
-            <li><b>Systematic Sizing:</b> Fixed % risk per trade. No martingale or grid.</li>
-            <li><b>Risk Engine:</b> Adaptive exposure + Safe-mode triggers.</li>
+          <li>ATR-based breakout detection on 30m ETHUSDT perpetuals.</li>
+          <li>Enters only when volatility expansion confirms directional movement.</li>
+          <li>No “chasing” of noise — filters low-quality spikes.</li>
         </ul>
-    </section>
-
-    <hr>
-
-    <!-- PERFORMANCE -->
-    <section class="section">
-        <h2>Performance Metrics</h2>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-filter"></i> Funding-Aware Filter</h3>
         <ul>
-            <li>Price Return: <b>21.67%</b></li>
-            <li>Funding Return: <b>-0.38%</b></li>
-            <li>Total Trades: <b>136</b></li>
-            <li>Win Rate: <b>26.47%</b></li>
-            <li>Expectancy: <b>0.5904 USDT</b></li>
+          <li>Monitors funding regime to avoid extreme adverse carry.</li>
+          <li>Reduces exposure when funding is unfavourable or unstable.</li>
+          <li>Keeps the strategy focused on structural trends, not short-term noise.</li>
         </ul>
-        <img src="eth_equity_curve_v3_final.png" class="chart">
-    </section>
-
-    <hr>
-
-    <!-- RISK -->
-    <section class="section">
-        <h2>Safety & Risk Management</h2>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-scale-balanced"></i> Risk Engine</h3>
         <ul>
-            <li>Controlled drawdown structure</li>
-            <li>Dynamic position sizing</li>
-            <li>Exposure reduction during low-quality markets</li>
-            <li>Leverage guideline: 5–8x</li>
-            <li>Safe-mode in high-risk conditions</li>
+          <li>Position sizing based on fixed % equity per trade.</li>
+          <li>Soft drawdown ceilings with exposure scaling.</li>
+          <li>No martingale, no grid, no averaging-down.</li>
         </ul>
-    </section>
-
-    <hr>
-
-    <!-- FAQ -->
-    <section class="section">
-        <h2>FAQ</h2>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-gauge-high"></i> Execution Profile</h3>
         <ul>
-            <li><b>Is capital guaranteed?</b> No. All trading has risk.</li>
-            <li><b>Does it work in sideways markets?</b> Yes. Exposure decreases automatically.</li>
-            <li><b>Can I stop anytime?</b> Yes.</li>
-            <li><b>Recommended capital?</b> $1,000+.</li>
+          <li>Designed for 5–8× leverage on major exchanges.</li>
+          <li>Handles both trending and choppy regimes by adjusting activity.</li>
+          <li>All signals are rule-based and fully automatable.</li>
         </ul>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <hr>
+  <!-- PERFORMANCE -->
+  <section class="section section-alt" id="performance">
+    <div class="section-header">
+      <p class="section-tag">Backtest Summary</p>
+      <h2>Performance snapshot on ETHUSDT perpetuals.</h2>
+      <p class="section-sub">
+        Historical simulation using the live trading engine, including execution and funding effects.
+      </p>
+    </div>
 
-    <!-- HOW TO START -->
-    <section class="section">
-        <h2>How to Start</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Core Metrics</h3>
+        <ul>
+          <li><b>CAGR:</b> 45.76%</li>
+          <li><b>Max Drawdown:</b> 8.65%</li>
+          <li><b>Sharpe Ratio:</b> 2.03</li>
+          <li><b>Profit Factor:</b> 1.28</li>
+          <li><b>Volatility (annualised):</b> 24.40%</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Trade-Level Profile</h3>
+        <ul>
+          <li><b>Trades:</b> 136</li>
+          <li><b>Win Rate:</b> 26.47%</li>
+          <li><b>Average Win:</b> significantly larger than average loss.</li>
+          <li><b>Expectancy:</b> 0.5904 USDT per trade.</li>
+          <li>Edge comes from trend capture, not win rate.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart-wrapper">
+      <img src="eth_equity_curve_v3_final.png" alt="ETH Aggressive v1 Equity Curve" />
+    </div>
+  </section>
+
+  <!-- RISK -->
+  <section class="section" id="risk">
+    <div class="section-header">
+      <p class="section-tag">Risk & Controls</p>
+      <h2>Built with drawdown control at the core.</h2>
+      <p class="section-sub">
+        The model is designed to prioritise risk stability over raw returns.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Drawdown Control</h3>
+        <p>
+          Exposure scales down as drawdown increases, preventing runaway risk. The model is calibrated for single-digit to low
+          double-digit drawdown ranges.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Leverage Discipline</h3>
+        <p>
+          Optimised around 5–8× leverage on major exchanges. No hidden compounding or unbounded exposure.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Systematic Behaviour</h3>
+        <p>
+          No discretionary overrides. All entries, exits and position sizes are rule-driven and repeatable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="section-header">
+      <p class="section-tag">FAQ</p>
+      <h2>Frequently asked questions.</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Is capital guaranteed?</h3>
+        <p>No. All trading involves risk. ETH Aggressive v1 is designed to control risk, not eliminate it.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does the model work in sideways markets?</h3>
+        <p>Yes. When markets are choppy or low-volatility, the engine naturally reduces trading frequency and exposure.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I stop at any time?</h3>
+        <p>Yes. You can disable trading and close positions at any time from your exchange.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the recommended capital?</h3>
+        <p>Around 1,000 USDT or more is recommended to mirror the backtest risk profile meaningfully.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO START -->
+  <section class="section" id="start">
+    <div class="section-header">
+      <p class="section-tag">Onboarding</p>
+      <h2>How to start using ETH Aggressive v1.</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Requirements</h3>
+        <ul>
+          <li>Exchange account (Bitget, Bybit, Binance USDM or similar).</li>
+          <li>USDT-margined ETH perpetuals available.</li>
+          <li>API key with trading permissions.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Simple setup flow</h3>
         <ol>
-            <li>Create an exchange account (Bitget / Bybit / Binance USDM).</li>
-            <li>Generate API Key.</li>
-            <li>Connect API in the dashboard.</li>
-            <li>Set leverage & risk settings.</li>
-            <li>Enable trading — the bot handles everything.</li>
+          <li>Create or log into your exchange account.</li>
+          <li>Generate an API key with trading permission only.</li>
+          <li>Connect your key in the A-Model dashboard (coming soon).</li>
+          <li>Choose leverage and risk settings aligned with your profile.</li>
+          <li>Enable the strategy — the engine handles entries and exits.</li>
         </ol>
+      </div>
+    </div>
 
-        <a href="#" class="cta-primary">Start Now</a>
-    </section>
+    <div class="center">
+      <a href="#top" class="btn btn-primary btn-large">Get Early Access</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="nav-logo-mark">A</span>
+        <span class="nav-logo-text">A-Model</span>
+        <p class="footer-copy">ETH Aggressive v1 — research-driven automated trading model.</p>
+      </div>
+      <div class="footer-right">
+        <p class="footer-note">Backtest results are hypothetical and do not guarantee future performance.</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
+
